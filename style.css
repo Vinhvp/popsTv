@@ -8,15 +8,33 @@ body{
     background-color:   #21434E;
 }
 .container{
+    position: relative;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 .logo{
     width: 120px;
     height: 40px;
 }
-img{
+.btn-rect{
+    background: linear-gradient(90deg,#f80,#ea3c2a 50%,#f80);
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 2s ease-in-out;
+    cursor: pointer;
+    background-position: 0;
+    transition: background 1s ease-in-out;
+}
+.btn-wrapper{
+    transition: background-position 1s ease-in-out;
     
+}
+.btn-rect:hover{
+    background: linear-gradient(to left, rgb(245, 214, 167), rgb(255, 136, 0));
+    box-shadow: 0 0 14px -1px var(--button_primary_boxshadow,#f80);
+    background-position: 100%;
+}
+img{
     object-fit: cover;
     width: 100%;
 }
@@ -50,6 +68,7 @@ li{
     align-items: center;
     justify-content: space-between;
     padding-top: 20px;
+    font-size: 20px;
 }
 .header__searchBox{
     outline: 0;
@@ -137,8 +156,16 @@ li{
 }
 
 .banner{
-    
+    position: relative;
 }
+.overlay{
+    position: absolute;
+    z-index: 98;
+    height: 900px;
+    inset: 0;
+    background-color: rgba(0, 0, 0,0.5);
+}
+
 
 .banner__control-prev,
 .banner__control-next{
@@ -177,5 +204,56 @@ li{
     flex-basis: 100%;
     width: 1688px;
     height: 100%;
+}
+.banner__wrapper-img > img{
+    max-height: 844px;
+    user-select: none;
+}
+.banner__button{
+    z-index: 99;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border: 0;
+}
+.banner-pos-btn{
+    position: absolute;
+    top: 60%;
+    left: calc((1688px - 1400px)/2);
+}
+.banner-pos-info{
+    position: absolute;
+    top: 40%;
+    left: calc((1688px - 1400px)/2);
+}
+.banner__info{
+    z-index: 99;
+    width: 600px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: justify;
+}
+.banner__info-title{
+    font-size: 40px;
+}
+.banner__info-content{
+    white-space: pre-line;
+}
+.film-content{
+    margin-top: 50px;
+}
+.film-title{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.film-title::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 10px;
+    height: 50px;
+    background: linear-gradient(90deg,#f80,#ea3c2a 50%,#f80);
 }
 

@@ -1,4 +1,5 @@
 let banner_img = document.querySelectorAll(".banner__wrapper-img");
+
 let bannerImgWidth = banner_img[0].offsetWidth;
 let bannerImgLength = banner_img.length;
 let banner_wrapper = document.querySelector(".banner__wrapper");
@@ -41,7 +42,6 @@ function showImg(bool){
 let flag = false
 function autoShow(){
     if(!flag){
-        console.log(index);
         if(index >= bannerImgLength-1){
             flag = true;
             return;
@@ -51,7 +51,7 @@ function autoShow(){
         index++;
     }
     else{
-        console.log(index);
+      
         if(index <= 0){
             flag = false;
             return;
@@ -61,4 +61,6 @@ function autoShow(){
         index--;
     }
 }
+
+
 setInterval(autoShow,2000);
